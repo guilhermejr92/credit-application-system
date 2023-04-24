@@ -58,13 +58,13 @@ class CustomerResourceTest {
         .content(valueAsString)
     )
       .andExpect(MockMvcResultMatchers.status().isCreated)
-      .andExpect(MockMvcResultMatchers.jsonPath("$.firstName").value("Cami"))
-      .andExpect(MockMvcResultMatchers.jsonPath("$.lastName").value("Cavalcante"))
-      .andExpect(MockMvcResultMatchers.jsonPath("$.cpf").value("28475934625"))
-      .andExpect(MockMvcResultMatchers.jsonPath("$.email").value("camila@email.com"))
-      .andExpect(MockMvcResultMatchers.jsonPath("$.income").value("1000.0"))
+      .andExpect(MockMvcResultMatchers.jsonPath("$.firstName").value("Bob"))
+      .andExpect(MockMvcResultMatchers.jsonPath("$.lastName").value("Firmino"))
+      .andExpect(MockMvcResultMatchers.jsonPath("$.cpf").value("66916922095"))
+      .andExpect(MockMvcResultMatchers.jsonPath("$.email").value("bobfirmino@email.com"))
+      .andExpect(MockMvcResultMatchers.jsonPath("$.income").value("6000.0"))
       .andExpect(MockMvcResultMatchers.jsonPath("$.zipCode").value("000000"))
-      .andExpect(MockMvcResultMatchers.jsonPath("$.street").value("Rua da Cami, 123"))
+      .andExpect(MockMvcResultMatchers.jsonPath("$.street").value("Rua Mossley Hill, 777"))
       .andExpect(MockMvcResultMatchers.jsonPath("$.id").value(1))
       .andDo(MockMvcResultHandlers.print())
   }
@@ -129,13 +129,13 @@ class CustomerResourceTest {
         .accept(MediaType.APPLICATION_JSON)
     )
       .andExpect(MockMvcResultMatchers.status().isOk)
-      .andExpect(MockMvcResultMatchers.jsonPath("$.firstName").value("Cami"))
-      .andExpect(MockMvcResultMatchers.jsonPath("$.lastName").value("Cavalcante"))
-      .andExpect(MockMvcResultMatchers.jsonPath("$.cpf").value("28475934625"))
-      .andExpect(MockMvcResultMatchers.jsonPath("$.email").value("camila@email.com"))
-      .andExpect(MockMvcResultMatchers.jsonPath("$.income").value("1000.0"))
+      .andExpect(MockMvcResultMatchers.jsonPath("$.firstName").value("Bob"))
+      .andExpect(MockMvcResultMatchers.jsonPath("$.lastName").value("Firmino"))
+      .andExpect(MockMvcResultMatchers.jsonPath("$.cpf").value("66916922095"))
+      .andExpect(MockMvcResultMatchers.jsonPath("$.email").value("bobfirmino@email.com"))
+      .andExpect(MockMvcResultMatchers.jsonPath("$.income").value("6000.0"))
       .andExpect(MockMvcResultMatchers.jsonPath("$.zipCode").value("000000"))
-      .andExpect(MockMvcResultMatchers.jsonPath("$.street").value("Rua da Cami, 123"))
+      .andExpect(MockMvcResultMatchers.jsonPath("$.street").value("Rua Mossley Hill, 777"))
       //.andExpect(MockMvcResultMatchers.jsonPath("$.id").value(1))
       .andDo(MockMvcResultHandlers.print())
   }
@@ -212,12 +212,12 @@ class CustomerResourceTest {
         .content(valueAsString)
     )
       .andExpect(MockMvcResultMatchers.status().isOk)
-      .andExpect(MockMvcResultMatchers.jsonPath("$.firstName").value("CamiUpdate"))
-      .andExpect(MockMvcResultMatchers.jsonPath("$.lastName").value("CavalcanteUpdate"))
-      .andExpect(MockMvcResultMatchers.jsonPath("$.cpf").value("28475934625"))
-      .andExpect(MockMvcResultMatchers.jsonPath("$.email").value("camila@email.com"))
-      .andExpect(MockMvcResultMatchers.jsonPath("$.income").value("5000.0"))
-      .andExpect(MockMvcResultMatchers.jsonPath("$.zipCode").value("45656"))
+      .andExpect(MockMvcResultMatchers.jsonPath("$.firstName").value("BobUpdate"))
+      .andExpect(MockMvcResultMatchers.jsonPath("$.lastName").value("FirminoUpdate"))
+      .andExpect(MockMvcResultMatchers.jsonPath("$.cpf").value("66916922095"))
+      .andExpect(MockMvcResultMatchers.jsonPath("$.email").value("bobfirmino@email.com"))
+      .andExpect(MockMvcResultMatchers.jsonPath("$.income").value("6000.0"))
+      .andExpect(MockMvcResultMatchers.jsonPath("$.zipCode").value("000000"))
       .andExpect(MockMvcResultMatchers.jsonPath("$.street").value("Rua Updated"))
       //.andExpect(MockMvcResultMatchers.jsonPath("$.id").value(1))
       .andDo(MockMvcResultHandlers.print())
@@ -250,14 +250,14 @@ class CustomerResourceTest {
 
 
   private fun builderCustomerDto(
-    firstName: String = "Cami",
-    lastName: String = "Cavalcante",
-    cpf: String = "28475934625",
-    email: String = "camila@email.com",
-    income: BigDecimal = BigDecimal.valueOf(1000.0),
-    password: String = "1234",
+    firstName: String = "Bob",
+    lastName: String = "Firmino",
+    cpf: String = "66916922095",
+    email: String = "bobfirmino@email.com",
+    income: BigDecimal = BigDecimal.valueOf(6000.0),
+    password: String = "4321",
     zipCode: String = "000000",
-    street: String = "Rua da Cami, 123",
+    street: String = "Rua Mossley Hill, 777",
   ) = CustomerDto(
     firstName = firstName,
     lastName = lastName,
@@ -270,10 +270,10 @@ class CustomerResourceTest {
   )
 
   private fun builderCustomerUpdateDto(
-    firstName: String = "CamiUpdate",
-    lastName: String = "CavalcanteUpdate",
-    income: BigDecimal = BigDecimal.valueOf(5000.0),
-    zipCode: String = "45656",
+    firstName: String = "BobUpdate",
+    lastName: String = "FirminoUpdate",
+    income: BigDecimal = BigDecimal.valueOf(6000.0),
+    zipCode: String = "000000",
     street: String = "Rua Updated"
   ): CustomerUpdateDto = CustomerUpdateDto(
     firstName = firstName,
